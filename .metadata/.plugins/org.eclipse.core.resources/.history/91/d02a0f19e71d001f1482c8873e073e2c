@@ -1,0 +1,267 @@
+package alumni_event_Client;
+
+import java.util.*;
+
+import alumni_event_Model.Alumni_Admin_Model;
+import alumni_event_Model.Alumni_Branch_Model;
+import alumni_event_Model.Alumni_Student_Info_Model;
+import alumni_event_Model.Pass_Out_Year_Model;
+import alumni_event_Service.Alumni_Admin_Service;
+import alumni_event_Service.Alumni_Branch_Service;
+import alumni_event_Service.Alumni_Student_Info_Service;
+import alumni_event_Service.Pass_Out_Year_Service;
+
+public class Alumni_Event_Client {
+
+	public static void main(String[] args) {
+		
+		Alumni_Admin_Model admin_Model=null;
+		Alumni_Admin_Service admin_Service=new Alumni_Admin_Service ();
+		Alumni_Branch_Model branch_Model=null;
+		Alumni_Branch_Service branch_Service=new Alumni_Branch_Service();  
+		Pass_Out_Year_Service pass_Service=new Pass_Out_Year_Service();
+		Pass_Out_Year_Model pass_Model=null;
+		Alumni_Student_Info_Model student_Model=new Alumni_Student_Info_Model();
+		Scanner sc=new Scanner(System.in);
+		boolean b;
+		int choice;
+		System.out.println("------------------------------------------------");
+		System.out.println("-----   Alumni Event Management System     -----");
+		System.out.println("------------------------------------------------");
+		
+		/*
+		do {
+			
+			System.out.println("\n\n\n1.Admin Login\t2.Student Login");
+			choice=sc.nextInt();
+			
+			switch(choice) {
+			
+			case 1: 
+				System.out.println("1.New Admin\n2.Exiting Admin");
+				choice=sc.nextInt();
+				
+				switch(choice) {
+				case 1:
+//					admin_Model =new Alumni_Admin_Model();
+//					System.out.println("enter Name, contact, username , password:");
+//					sc.nextLine();
+//					admin_Model.setName(sc.nextLine());
+//					admin_Model.setContact(sc.nextLong());
+//					sc.nextLine();
+//					admin_Model.setUsername(sc.nextLine());
+//					admin_Model.setPassword(sc.nextLine());
+//					
+//					 b=admin_Service.isAddAdmin(admin_Model);
+//					if(b) 
+//						System.out.println("Admin added Successfully....");
+//					else
+//						System.out.println("Admin Not Added....");
+//					
+					break;
+				case 2:
+					
+					System.out.println("Enter UserName And Password");
+					sc.nextLine();
+					String username=sc.nextLine();
+					String password=sc.nextLine();
+					
+					b=admin_Service.getAdminInfo(username,password);
+					if(b) {
+						System.out.println("Admin Login Successully.....");
+					}
+					else {
+						System.out.println("Admin not found");
+					}
+				
+					break;
+					
+				default:
+					System.out.println("Select Correct option");
+					break;
+				}
+				
+				break;
+			
+				
+			default:
+				System.out.println("Please Select Correct Option");
+				break;
+				
+			}// switch case end
+			
+		}while(true);
+		 */
+		
+		do {
+			
+			System.out.println("1.Add Branch");
+			System.out.println("2.Add Pass Out Year");
+			System.out.println("3.Add / View / Delete /Update Alumni");
+			choice=sc.nextInt();
+			
+			switch(choice) {
+			case 1:
+				branch_Model=new Alumni_Branch_Model();
+				// branch add
+//				System.out.println("enter Branch Name and Branch HOD Name");
+//				sc.nextLine();
+//				branch_Model.setBranch_name(sc.nextLine());
+//				branch_Model.setHod_name(sc.nextLine());
+//				
+//				boolean b=branch_Service.isAddNewBranch(branch_Model);
+//				if(b) {
+//					System.out.println("Branch Added Successfully...");
+//				}
+//				else {
+//					System.out.println("Branch Not Added...");
+//				}
+//				
+				
+				/*Branch information*/
+//				ArrayList<Alumni_Branch_Model> al=branch_Service.getBranchInfo();
+//				for(Alumni_Branch_Model am:al) {
+//					System.out.println(am.getId()+"\t"+am.getBranch_name()+"\t"+am.getHod_name());
+//				}
+				
+				/*Branch id and hod info*/
+//				Alumni_Branch_Model abm=branch_Service.getIdHODInfo("IT");
+//				System.out.println(abm.getId()+"\t"+abm.getHod_name());
+//				
+				break;
+				
+			case 2:
+				// passout year add
+//				pass_Model=new Pass_Out_Year_Model();
+				
+				System.out.println("Enter Pass Out Year");
+				int year=sc.nextInt();
+			
+				if(year<2024) {
+					 b=pass_Service.isAddPassOutYear(year);
+						if(b) {
+							System.out.println("Pass Out Year add sucessfully...");
+						}
+						else {
+							System.out.println("Not add Pass Out Year...");
+						}
+				}
+				
+				else {
+					System.out.println("Year not allow");
+				}
+				
+				/*ALL Pass out year Info*/
+//				ArrayList<Pass_Out_Year_Model>al=pass_Service.getPassYearInfo();
+//				
+//				if(al!=null) {
+//					System.out.println("PassYear_Id\tPassYear");
+//					for(Pass_Out_Year_Model passModel:al) {
+//						System.out.println(passModel.getId()+"\t"+passModel.getYear());
+//					}
+//				}
+//				else {
+//					System.out.println("Pass_year_Data not found..");
+//				}
+				
+				/*Pass out year id*/
+//				System.out.println("enter year");
+//				int  year=sc.nextInt();
+//				int yearId=pass_Service.getPassOutYearId(year);
+//				if(yearId>0) {
+//					System.out.println("Year id"+yearId);
+//				}else {System.out.println("Year Not Present");}
+				
+				
+				break;
+			case 3:
+				// alumni add
+				System.out.println("1.Add Student\n2.View Student\n3.Delete Student\n4.Update Student\n5.Add Multiple Student");
+				choice=sc.nextInt();
+				
+				switch(choice) {
+				case 1:
+					Alumni_Student_Info_Service student_Service=new Alumni_Student_Info_Service();
+					System.out.println("enter Student Name,Contact,Branch,Pass_Out_Year");
+					sc.nextLine();
+					String name=sc.nextLine();
+					long contact=sc.nextLong();
+					sc.nextLine();
+					String branch=sc.nextLine();
+					int student_year=sc.nextInt();
+					
+					student_Model.setName(name);
+					student_Model.setContact(contact);
+					student_Model.setDepartment(branch);
+					student_Model.setPassoutYear(student_year);
+					
+					if(student_year<2024) {
+						int year_id=pass_Service.getPassOutYearId(student_year);
+						if(year_id!=0) {
+							
+							int branchId=branch_Service.getBranchId(branch);
+							if(branchId>0) {
+								b=student_Service.isAddStudent(student_Model,year_id,branchId);
+								if(b)System.out.println("Student Added successfully...");
+								else System.out.println("Student not added");
+							}
+							else {
+								System.out.println("Branch not in our college");
+							}
+						}
+						else {
+							System.out.println("Pass Out year not in table");
+							System.out.println("Do you want to add in table");
+							sc.nextLine();
+							String str=sc.nextLine();
+							if(str.equals("yes")) {
+								b=pass_Service.isAddPassOutYear(student_year);
+								if(b)System.out.println("Pass Out Year Add Successully... ");
+								else System.out.println("Pass Out Year Not Added");
+							}
+						}
+						
+					}
+					else {
+						System.out.println("Student Not allow");
+					}
+				
+					
+					
+					
+				
+				
+					
+					
+//					if(b) System.out.println("add successfully...");
+//					else System.out.println("Not add ");
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				default:
+					System.out.println("Incorrect Seletion...");
+					break;
+				}
+				
+				break;
+			
+			default:
+				System.out.println("Select Correct Option...");
+				break;
+			}
+		}while(choice<=3);
+		
+		
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,78 @@
+package alumni_event__Repository;
+
+import java.util.ArrayList;
+
+import alumni_event_Config.DBHelper;
+import alumni_event_Model.Alumni_Event_Model;
+
+public class Alumni_Event_Repository extends DBHelper {
+
+	public boolean isAddNewEvent(Alumni_Event_Model eModel) {
+		
+		try {
+			stmt=conn.prepareStatement("insert into alumnievent values(?,?,?,?)");
+			stmt.setInt(1, 2);
+			stmt.setString(2, eModel.getEvent_Name());
+			stmt.setString(3, eModel.getDate());
+			stmt.setInt(4, eModel.getOrg_BranchId());
+			
+			int value=stmt.executeUpdate();
+	
+			return value>0?true:false;
+		}
+		catch(Exception ex) {
+			System.out.println("ia add event error "+ex);
+			return false;
+		}
+		
+		
+	}
+	
+	public ArrayList<Alumni_Event_Model> showAllEventDetails(){
+		ArrayList<Alumni_Event_Model> al=new ArrayList<Alumni_Event_Model>();
+		try {
+			
+			stmt=conn.prepareStatement("select e.event_id,e.event_name,e.event_date,b.branch_name from alumnievent e inner join alumnibranch b on e.org_branch_id=b.branch_id;");
+			rs=stmt.executeQuery();
+			
+			
+			while(rs.next()) {
+				Alumni_Event_Model eModel=new Alumni_Event_Model();
+				eModel.setEvent_Id(rs.getInt(1));
+				eModel.setEvent_Name(rs.getString(2));
+				eModel.setDate(rs.getString(3));
+				eModel.setOrg_Branch(rs.getString(4));
+				al.add(eModel);
+			}
+			return al;
+			
+		}
+		catch(Exception ex) {
+			System.out.println("show all event error "+ex);
+			return null;
+		}
+	}
+	
+	// student registure for event
+	public boolean eventRegistration(int studentId,int eventId) {
+		try {
+			
+			stmt=conn.prepareStatement("insert into eventregistration values(?,?,?)");
+			stmt.setInt(1, 1);
+			stmt.setInt(2, studentId);
+			stmt.setInt(3, eventId);
+			
+			int value=stmt.executeUpdate();
+			
+			return value>0?true:false;
+			
+		}catch(Exception ex) {
+			System.out.println("event Registration"+ex);
+			return false;
+		}
+		
+	}
+	
+	
+	
+}

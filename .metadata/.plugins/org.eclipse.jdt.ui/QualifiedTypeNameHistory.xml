@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="alumni_event__Repository.Alumni_Master_Repository"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Alumni_Add_Service"/>
+    <fullyQualifiedTypeName name="alumni_event__Repository.Alumni_Admin_Repository"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Alumni_Admin_Service"/>
+    <fullyQualifiedTypeName name="alumni_event_Model.Alumni_Admin_Model"/>
+    <fullyQualifiedTypeName name="alumni_event__Repository.Alumni_Branch_Repository"/>
+    <fullyQualifiedTypeName name="alumni_event_Model.Alumni_Branch_Model"/>
+    <fullyQualifiedTypeName name="alumni_event_Config.DBHelper"/>
+    <fullyQualifiedTypeName name="alumni_event__Repository.Alumni_Student_Info_Repository"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Alumni_Student_Info_Service"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Pass_Out_Year_Service"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Alumni_Branch_Service"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="alumni_event_Config.PathHelper"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="alumni_event__Repository.Alumni_Event_Repository"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.Aumni_Event_Service"/>
+    <fullyQualifiedTypeName name="alumni_event_Model.Alumni_Event_Model"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeParseException"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="alumni_event_Model.Alumni_Student_Info_Model"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+    <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="java.net.Authenticator"/>
+    <fullyQualifiedTypeName name="alumni_event_Service.EmailSender"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="javax.mail.search.SentDateTerm"/>
+    <fullyQualifiedTypeName name="services.CheckFailedMail"/>
+</qualifiedTypeNameHistroy>

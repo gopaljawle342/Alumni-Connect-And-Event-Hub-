@@ -1,0 +1,21 @@
+package alumni_event__Repository;
+
+import alumni_event_Config.DBHelper;
+
+public class Pass_Out_Year_Repository extends DBHelper{
+
+	public boolean isAddPassOutYear(int pass_Year) {
+		
+		try {
+			stmt=conn.prepareStatement("insert into passoutyear values('0',?");
+			stmt.setInt(1, pass_Year);
+			int value=stmt.executeUpdate();
+			return value>0?true:false;
+		}
+		catch(Exception ex) {
+			System.out.println("isAddPassOutYear error "+ex);
+			return false;
+		}
+	}
+}
+
